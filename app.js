@@ -8,11 +8,13 @@ app.use(express.json());
 const playerRouter = require('./routes/playerRoute');
 const tableRouter = require('./routes/tableRoute');
 const transactionRouter = require('./routes/transactionRoute');
+const compression = require('compression');
 // if in dev mode.. runs morgan
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+app.use(compression());
 // mounting player routes
 app.use('/api/v1/players', playerRouter);
 
