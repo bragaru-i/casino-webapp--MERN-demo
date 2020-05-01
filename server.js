@@ -13,7 +13,7 @@ const app = require('./app');
 const mongoose = require('mongoose');
 const autoIncrement = require('mongoose-auto-increment');
 //setting DB and connecting to server
-const DB = process.env.DATABASE.replace('<PASSWORD>', process.env.PASSWORD_DATABASE);
+let DB = process.env.DATABASE.replace('<PASSWORD>', process.env.PASSWORD_DATABASE);
 const DB_LOCAL = process.env.DATABASE_LOCAL;
 mongoose
   .connect(DB, {
