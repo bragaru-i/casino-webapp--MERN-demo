@@ -1,6 +1,17 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
+
 const app = express();
+
+// Allowing everyone to use API
+app.use(cors());
+
+//  protect cors
+// app.use( cors ({
+//   origin: 'https://www.mypage.com'
+// }))
+
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 app.use(express.json());
