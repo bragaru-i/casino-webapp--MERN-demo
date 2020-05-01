@@ -9,7 +9,6 @@ exports.getAllTransactions = catchAsync(async (req, res, next) => {
   Object.keys(req.body).forEach(
     (key) => req.body[key] === undefined && delete req.body[key]
   );
-  console.log(req.body);
   let transactions = await Transaction.find(req.body);
   res.status(200).json({
     status: 'succes',
@@ -26,7 +25,6 @@ exports.createTransaction = catchAsync(async (req, res, next) => {
 });
 
 exports.updateTransaction = catchAsync(async (req, res, next) => {
-  console.log('Transaction update method mounted');
   let transaction = await Transaction.findById(req.params.id);
   let table = await Table.findById(transaction.table);
   let updates = Object.keys(req.body);

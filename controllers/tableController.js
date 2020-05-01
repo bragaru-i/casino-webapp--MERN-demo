@@ -32,7 +32,6 @@ exports.updateTable = catchAsync(async (req, res, next) => {
 
   //working with players and inactive
   if (req.body.players) {
-    console.log(updated.players);
     updated.players = updated.players || [];
 
     // If player is added to table = return error
@@ -51,7 +50,6 @@ exports.updateTable = catchAsync(async (req, res, next) => {
     });
     transaction.save();
     let player = await Player.findById(req.body.players.player);
-    console.log(player);
     // player.transactions = player.transactions || [];
     // player.transactions.push(transaction._id);
     player.save();

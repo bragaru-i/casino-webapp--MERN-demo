@@ -2,7 +2,6 @@ const catchAsync = require('./catchAsync');
 const Table = require('../models/tableModel');
 const filterUpdate = catchAsync(async (req, res, next) => {
   const { activePlayers, cashLog, float } = req.body;
-  console.log(float);
   const keys = Object.keys(float)[0];
   const values = Object.values(float)[0];
   let updated = activePlayers
@@ -26,7 +25,7 @@ const filterUpdate = catchAsync(async (req, res, next) => {
     : req.body;
   res.status(200).json({
     message: 'updated',
-    table: updated
+    table: updated,
   });
 });
 module.exports = filterUpdate;
