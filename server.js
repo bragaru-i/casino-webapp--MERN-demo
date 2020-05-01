@@ -24,7 +24,8 @@ mongoose
   })
   .then((con) => {
     console.log('***DB connected succesfully***');
-  });
+  })
+  .catch((err) => console.log('Not logged DB', err));
 
 // console.log(`***You're currently run in ${process.env.NODE_ENV} mode***`);
 
