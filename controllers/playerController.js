@@ -11,14 +11,14 @@ exports.getAllPlayers = catchAsync(async (req, res, next) => {
     .paginate();
   const players = await features.query;
   res.status(200).json({
-    players,
+    data: players,
   });
 });
 
 exports.createPlayer = catchAsync(async (req, res, next) => {
   const player = await Player.create(req.body);
   res.status(201).json({
-    player,
+    data: player,
   });
 });
 exports.updatePlayer = catchAsync(async (req, res, next) => {
@@ -42,7 +42,7 @@ exports.getPlayer = catchAsync(async (req, res, next) => {
   );
   if (!player) return next(new AppError('No player found with this id', 404));
   res.status(200).json({
-    player,
+    data: player,
   });
 });
 

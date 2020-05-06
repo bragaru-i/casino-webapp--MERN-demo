@@ -9,7 +9,7 @@ const countChip = require('../utils/countChips');
 exports.createTable = catchAsync(async (req, res, next) => {
   const table = await Table.create(req.body);
   res.status(201).json({
-    table,
+    data: table,
   });
 });
 exports.getAllTables = catchAsync(async (req, res, next) => {
@@ -20,7 +20,7 @@ exports.getAllTables = catchAsync(async (req, res, next) => {
     .paginate();
   const tables = await features.query;
   res.status(200).json({
-    tables,
+    data: tables,
   });
 });
 
@@ -75,7 +75,7 @@ exports.updateTable = catchAsync(async (req, res, next) => {
   }
   updated.save();
   res.status(200).json({
-    updated,
+    data: updated,
   });
 });
 

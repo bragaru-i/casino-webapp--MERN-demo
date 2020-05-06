@@ -11,15 +11,14 @@ exports.getAllTransactions = catchAsync(async (req, res, next) => {
   );
   let transactions = await Transaction.find(req.body);
   res.status(200).json({
-    transactions,
+    data: transactions,
   });
 });
 
 exports.createTransaction = catchAsync(async (req, res, next) => {
   let newTransaction = await Transaction.create(req.body);
   res.status(200).json({
-    status: 'succes',
-    transactions: newTransaction,
+    data: newTransaction,
   });
 });
 
@@ -91,7 +90,7 @@ exports.updateTransaction = catchAsync(async (req, res, next) => {
   transaction.save();
   table.save();
   res.status(200).json({
-    transaction,
+    data: transaction,
   });
 });
 
@@ -105,6 +104,6 @@ exports.deleteTransaction = catchAsync(async (req, res, next) => {
 exports.getTransaction = catchAsync(async (req, res, next) => {
   let transaction = await Transaction.findById(req.params.id);
   res.status(200).json({
-    transaction,
+    data: transaction,
   });
 });
