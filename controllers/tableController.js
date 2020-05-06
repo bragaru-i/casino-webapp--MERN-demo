@@ -9,7 +9,7 @@ const countChip = require('../utils/countChips');
 exports.createTable = catchAsync(async (req, res, next) => {
   const table = await Table.create(req.body);
   res.status(201).json({
-    data: table,
+    table,
   });
 });
 exports.getAllTables = catchAsync(async (req, res, next) => {
@@ -20,8 +20,7 @@ exports.getAllTables = catchAsync(async (req, res, next) => {
     .paginate();
   const tables = await features.query;
   res.status(200).json({
-    results: tables.length,
-    data: tables,
+    tables,
   });
 });
 
@@ -76,8 +75,7 @@ exports.updateTable = catchAsync(async (req, res, next) => {
   }
   updated.save();
   res.status(200).json({
-    status: 'succes',
-    table: updated,
+    updated,
   });
 });
 
@@ -95,8 +93,7 @@ exports.getTable = catchAsync(async (req, res, next) => {
 
   if (!table) return next(new AppError('No table found with this id', 404));
   res.status(200).json({
-    status: 'succes',
-    data: table,
+    table,
   });
 });
 

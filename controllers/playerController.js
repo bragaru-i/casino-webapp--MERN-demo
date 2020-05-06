@@ -11,15 +11,14 @@ exports.getAllPlayers = catchAsync(async (req, res, next) => {
     .paginate();
   const players = await features.query;
   res.status(200).json({
-    results: players.length,
-    data: players,
+    players,
   });
 });
 
 exports.createPlayer = catchAsync(async (req, res, next) => {
   const player = await Player.create(req.body);
   res.status(201).json({
-    data: player,
+    player,
   });
 });
 exports.updatePlayer = catchAsync(async (req, res, next) => {
@@ -31,11 +30,9 @@ exports.updatePlayer = catchAsync(async (req, res, next) => {
     : await Player.findByIdAndUpdate(req.params.id, {
         $push: { transactions: req.body.transactions },
       });
-  if (!updated)
-    return next(new AppError('No player found with this id', 404));
+  if (!updated) return next(new AppError('No player found with this id', 404));
   res.status(200).json({
-    status: 'succes',
-    player: updated,
+    updated,
   });
 });
 
@@ -43,18 +40,15 @@ exports.getPlayer = catchAsync(async (req, res, next) => {
   const player = await Player.findById(req.params.id).populate(
     'transactions.transaction'
   );
-  if (!player)
-    return next(new AppError('No player found with this id', 404));
+  if (!player) return next(new AppError('No player found with this id', 404));
   res.status(200).json({
-    status: 'succes',
-    data: player,
+    player,
   });
 });
 
 exports.deletePlayer = catchAsync(async (req, res, next) => {
   const toDelete = await Player.findByIdAndDelete(req.params.id);
-  if (!toDelete)
-    return next(new AppError('No player found with this id', 404));
+  if (!toDelete) return next(new AppError('No player found with this id', 404));
 
   res.status(204).json({
     status: 'succes',

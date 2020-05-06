@@ -35,7 +35,7 @@ app.use('/api/v1/tables', tableRouter);
 //mounting transactions Route
 app.use('/api/v1/transactions', transactionRouter);
 
-app.all('*', (req, res, next) => {
+app.all('/api/v1/*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
 });
 app.use(globalErrorHandler);
