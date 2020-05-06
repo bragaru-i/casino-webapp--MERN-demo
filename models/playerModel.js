@@ -45,6 +45,7 @@ const playerSchema = new mongoose.Schema(
       type: String,
       enum: {
         values: ['classic', 'gold', 'platinum'],
+        default: 'classic',
         message: 'Card type is either: classic, gold, platinum',
       },
       required: true,
@@ -54,7 +55,7 @@ const playerSchema = new mongoose.Schema(
       select: false,
     },
     phone: {
-      type: Number,
+      type: String,
     },
     // transactions: [
     //   {
