@@ -1,0 +1,8 @@
+.left-container {
+  height: 100%;
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: #2c2827;
+}

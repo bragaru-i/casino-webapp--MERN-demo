@@ -12,6 +12,8 @@ exports.getAllPlayers = catchAsync(async (req, res, next) => {
   const players = await features.query;
   res.status(200).json({
     data: players,
+    status: 'succes',
+    results: players.length,
   });
 });
 
