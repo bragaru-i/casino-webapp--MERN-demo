@@ -1,0 +1,34 @@
+.search-box {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  margin: 3px;
+  height: 76%;
+  -webkit-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  box-shadow: 7px 3px 24px -4px rgba(150, 63, 63, 0.73);
+}
+.search-result-container {
+  border: 1px black dotted;
+  width: 100%;
+  height: 100%;
+}
+
+.search-results {
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.search-results > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.player-details-container {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

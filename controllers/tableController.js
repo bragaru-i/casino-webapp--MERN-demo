@@ -26,6 +26,8 @@ exports.getAllTables = catchAsync(async (req, res, next) => {
 
 // update table works only with adding players
 exports.updateTable = catchAsync(async (req, res, next) => {
+  console.log(req.body);
+
   let updated = await Table.findById(req.params.id);
   if (!updated) return next(new AppError('No table found with this id', 404));
 
@@ -41,7 +43,7 @@ exports.updateTable = catchAsync(async (req, res, next) => {
       }
     }
 
-    updated.players.push(req.body.players);
+    updated.players = [req.body.players, ...updated.players];
 
     let transaction = await Transaction.create({
       table: req.params.id,
@@ -56,6 +58,12 @@ exports.updateTable = catchAsync(async (req, res, next) => {
   if (req.body.inactive) {
     updated.inactive = updated.inactive || [];
     updated.inactive.push(req.body.inactive);
+    console.log(req.body.inactive.player);
+    updated.players = updated.players.filter((item) => {
+      console.log(item.player != req.body.inactive.player);
+      return item.player != req.body.inactive.player;
+    });
+    // updated = [...newUpd];
   }
   //  finished with players
 

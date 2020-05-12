@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 export const MenuBurger = (props) => {
   let link = props.link;
-  let display = link === 'table' ? 'menu-burger change' : 'menu-burger';
+
+  let display = link === 'tables' ? 'menu-burger change' : 'menu-burger';
   return (
     <div className="menu-container">
-      <Link to={`/${link}`}>
+      <Link to="/tables">
         <div className={display}>
           <div className="bar1"></div>
           <div className="bar2"></div>

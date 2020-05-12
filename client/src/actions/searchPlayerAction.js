@@ -6,7 +6,7 @@ import {
 import urljoin from 'url-join';
 import axios from 'axios';
 
-let uri = 'http://localhost:8000/api/v1/players';
+let uri = '/api/v1/players';
 
 const searchPlayer = (search) => {
   return (dispatch) => {

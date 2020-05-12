@@ -1,11 +1,136 @@
 .app-container {
   display: flex;
   flex-direction: row;
-  box-sizing: border-box;
   width: 100%;
   height: 100%;
 }
 .right-container {
   display: flex;
   flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.active {
+  color: orange;
+  font-weight: 400;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* left panel css */
+.left-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #28293b;
+
+  height: 100%;
+  width: 20%;
+}
+
+.left-list-container {
+  width: 100%;
+  height: 100%;
+  color: #454956;
+  font-size: 1rem;
+}
+
+.list-container {
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding-left: 5px;
+}
+
+/* topPanel */
+
+.top-panel-container {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+}
+
+/* right panel */
+.right-panel-container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.right-main-container {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  width: 100%;
+  height: 20%;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/*  setting buttons !!! */
+.btn-primary {
+  background-color: #4a8cff;
+
+  border: none;
+  color: #ffffff;
+  padding: 5px 10px !important;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  width: 7rem;
+}
+
+.btn-primary span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.7s;
+}
+.btn-primary span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.7s;
+}
+.btn-primary:hover span {
+  padding-right: 25px;
+}
+.btn-primary:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.orange {
+  background-color: #fd7d02;
+  color: white;
+}
+.warning {
+  background-color: #ff4949;
+  color: white;
+}
+.green {
+  background-color: #13ce66;
+  color: white;
 }

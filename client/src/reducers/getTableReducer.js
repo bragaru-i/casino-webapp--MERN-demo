@@ -12,7 +12,7 @@ const getTableReducer = (state = initialState, action) => {
         ...state,
         loading: 'loaded',
         error: null,
-        data: { ...state.data, ...action.payload },
+        data: { ...action.payload },
       };
 
     case GET_TABLE_ERROR:

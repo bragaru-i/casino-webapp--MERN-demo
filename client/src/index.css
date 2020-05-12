@@ -3,19 +3,18 @@
   font-family: 'Ubuntu', sans-serif;
   padding: 0;
   overflow: hidden;
+  box-sizing: border-box;
 }
 html,
 body {
   border: 0;
   height: 100%;
-  /* box-sizing: border-box; */
   width: 100%;
   margin: 0;
   font-weight: 300;
-  background: #e6e8f6;
-} /*  */
+}
 #root {
-  box-sizing: border-box;
+  background-color: #f2f3f8;
   height: 100%;
   width: 100%;
 }

@@ -1,0 +1,29 @@
+.image-container {
+  height: 50%;
+  width: 100%;
+  background-color: yellow;
+}
+.image-container img {
+  height: 100%;
+  align-self: center;
+  justify-content: center;
+}
+.player-details-container {
+  background-color: red;
+  width: 32%;
+  height: 100%;
+}
+.player-details-info {
+  -webkit-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  width: 98%;
+  margin: 3px;
+}
+.player-details-actions {
+  -webkit-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  width: 98%;
+  margin: 3px;
+}

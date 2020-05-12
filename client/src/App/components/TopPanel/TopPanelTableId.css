@@ -1,0 +1,64 @@
+.top-panel-float-container {
+  width: 74%;
+  height: 96%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  margin: 3px;
+  box-sizing: border-box;
+}
+.top-panel-tabname {
+  width: 100%;
+  height: 1.75rem;
+  background-color: wheat;
+}
+.float-container {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  justify-content: center;
+}
+
+.float-chip-container {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.info-display-container {
+  -webkit-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  -moz-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
+  width: 23%;
+  height: 96%;
+  margin: 3px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.info-display-container table {
+  width: 100%;
+  height: 100%;
+}
+.info-display-container table tbody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.info-display-container table tbody td {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.info-display-container table tbody td tr {
+  height: 33%;
+}

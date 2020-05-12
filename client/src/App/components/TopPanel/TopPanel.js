@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TopPanel = () => {
-  return <div>I'm top panel</div>;
+  return <div className="top-panel-container"></div>;
 };
 
 export default TopPanel;
