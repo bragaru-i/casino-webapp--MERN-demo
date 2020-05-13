@@ -30,8 +30,8 @@ const RightPanelAddPlayer = ({ results, searchPlayer, match, patchTable }) => {
     <div className="search-box">
       <form onSubmit={(e) => onSubmit(e)}>
         <label>
-          Enter first name
           <input
+            placeholder="First name"
             type="text"
             name="firstName"
             value={firstName}
@@ -39,8 +39,8 @@ const RightPanelAddPlayer = ({ results, searchPlayer, match, patchTable }) => {
           />
         </label>
         <label>
-          Enter last name
           <input
+            placeholder="Last name"
             type="text"
             name="lastName"
             value={lastName}
@@ -48,46 +48,52 @@ const RightPanelAddPlayer = ({ results, searchPlayer, match, patchTable }) => {
           />
         </label>
         <label>
-          Enter casino id
-          <input type="text" name="cId" value={cId} onChange={(e) => onChange(e)} />
-        </label>
-        <label>
-          <input type="submit" value="Submit" />
+          <input
+            placeholder="casino ID"
+            type="text"
+            name="cId"
+            value={cId}
+            onChange={(e) => onChange(e)}
+          />
         </label>
       </form>
       {/* Rendering results
        */}
       <div className="search-result-container">
-        <ul className="search-results">
-          <li>
+        <div className="search-results">
+          <div className="res-item inner-shadow" style={{ height: '2rem' }}>
             <span>Name Surname</span>
             <span>CasinoId</span>
             <span>Avatar</span>
             <span>Country</span>
             <span>LastVisit</span>
             <span>Actions</span>
-          </li>
-          {results.loading === 'loaded' &&
-            results.results > 0 &&
-            results.data.map((player) => (
-              <li key={player.id}>
-                <span>
-                  {player.firstName} {player.lastName}
-                </span>
-                <span>{player.cId}</span>
-                <span>Image</span>
-                <span>{player.country}</span>
-                <span>{player.visits[player.visits.length - 1].slice(0, 10)}</span>
-                <span
-                  onClick={() =>
-                    patchTable({ players: { player: player.id } }, match.params.tableId)
-                  }
-                >
-                  Add to table
-                </span>
-              </li>
-            ))}
-        </ul>
+          </div>
+          <div className="res-wrapper">
+            {results.loading === 'loaded' &&
+              results.results > 0 &&
+              results.data.map((player) => (
+                <div className="res-item" key={player.id}>
+                  <span style={{ paddingLeft: '5px' }}>
+                    {player.firstName} {player.lastName}
+                  </span>
+                  <span>{player.cId}</span>
+                  <span>
+                    <img src={player.avatar} style={{ paddingTop: '5px' }}></img>
+                  </span>
+                  <span>{player.country}</span>
+                  <span>{player.visits[player.visits.length - 1].slice(0, 10)}</span>
+                  <span
+                    onClick={() =>
+                      patchTable({ players: { player: player.id } }, match.params.tableId)
+                    }
+                  >
+                    <button className="btn-primary">Add to table</button>
+                  </span>
+                </div>
+              ))}
+          </div>
+        </div>
       </div>
     </div>
   );

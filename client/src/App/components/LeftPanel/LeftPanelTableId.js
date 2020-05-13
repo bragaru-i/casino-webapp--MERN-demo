@@ -3,6 +3,7 @@ import { Link, NavLink, useRouteMatch } from 'react-router-dom';
 import MenuBurger from '../../shared/MenuBurger/MenuBurger';
 import { connect } from 'react-redux';
 
+import Icon from '../../shared/Icons';
 import loadTable from '../../../actions/getTableByIdAction';
 
 const LeftPanelTableId = ({ table, loadTable }) => {
@@ -20,17 +21,37 @@ const LeftPanelTableId = ({ table, loadTable }) => {
       <MenuBurger link="table" />
       <div className="left-list-container">
         <ul className="list-container">
-          <li className="list-player-item">
-            <Link to={`${match.url}/addPlayer`}> Add a player</Link>
+          <li className="list-player-item" style={{ fontStyle: 'italic' }}>
+            <Link to={`${match.url}/addPlayer`}>
+              <Icon
+                name="contact"
+                fill="white"
+                width="45px"
+                style={{
+                  background: 'transparent',
+                  paddingLeft: '1rem',
+                }}
+              />
+              Add a player
+            </Link>
           </li>
           {table.loading === 'loaded' &&
             data.players.map((item) => (
               <li key={item.player.id} className="list-player-item">
                 <NavLink to={`${match.url}/player/${item.player.id}`}>
-                  <span>
-                    {item.player.firstName} {item.player.lastName}
-                  </span>
-                  <span>ID:{item.player.cId}</span>
+                  <div>
+                    <span>
+                      {item.player.firstName} {item.player.lastName}
+                    </span>
+                    <span>ID:{item.player.cId}</span>
+                  </div>
+                  <div>
+                    <img
+                      style={{ width: '3rem' }}
+                      src={item.player.avatar}
+                      alt="Avatar"
+                    ></img>
+                  </div>
                 </NavLink>
               </li>
             ))}

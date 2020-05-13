@@ -25,40 +25,37 @@ const TopPanelTableId = ({ table }) => {
         </div>
       </div>
       <div className="info-display-container">
-        <table>
-          <tbody>
-            <td>
-              <tr>
-                <button className="btn-primary">
-                  <span>Close</span>
-                </button>
-              </tr>
-              <tr>
-                <button className="btn-primary green">
-                  <span>Count</span>
-                </button>
-              </tr>
-              <tr>
-                <button className="btn-primary">
-                  <span>Logs</span>
-                </button>
-              </tr>
-            </td>
-            <td>
-              <tr style={{ textAlignLast: 'end' }}>{moment().format('LT')}</tr>
-              <tr>
-                <button className="btn-primary">
-                  <span>Search</span>
-                </button>
-              </tr>
-              <tr>
-                <button className="btn-primary">
-                  <span>Exchange</span>
-                </button>
-              </tr>
-            </td>
-          </tbody>
-        </table>
+        <div>
+          <div>
+            <span> Game Logs</span>
+          </div>
+          <div>Count</div>
+          <div>
+            <select className="select-css">
+              <option>Select a Game</option>
+              <option>American Roulette</option>
+              <option>Black Jack</option>
+              <option>Russian Poker</option>
+              <option>Trio Poker</option>
+              <option>Ultimate Poker</option>
+              <option>Texas Poker</option>
+              <option>Carribean Poker</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <div
+            style={{
+              paddingRight: '0.5rem',
+              alignItems: 'baseline',
+              justifyContent: 'flex-end',
+            }}
+          >
+            {moment().format('LT')}
+          </div>
+          <div>Search</div>
+          <div>Exchange</div>
+        </div>
       </div>
     </div>
   );

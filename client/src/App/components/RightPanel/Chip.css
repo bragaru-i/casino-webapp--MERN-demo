@@ -1,15 +1,22 @@
 .chip-container {
+  margin: 3px;
+
   width: 32%;
   height: 98%;
   display: flex;
   flex-direction: column;
-  -webkit-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
-  -moz-box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
-  box-shadow: 7px 3px 24px -4px rgba(0, 0, 0, 0.73);
-  margin: 5px;
+  -webkit-box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.75);
 }
 .chip-tab-name {
-  background-color: indianred;
+  color: white;
+  background-color: #5f6062;
+  font-weight: 400;
+  height: 1.5rem;
+
+  width: 100%;
+  padding-left: 3px;
 }
 .chip-items-container {
   font-size: 0.75rem;
@@ -17,11 +24,19 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
 }
 
 .chip-item-container {
+  border-bottom: 1px dashed wheat;
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: center;
+}
+
+.chip-items-container > div:nth-child(even) {
+  background-color: rgb(245, 233, 233);
 }

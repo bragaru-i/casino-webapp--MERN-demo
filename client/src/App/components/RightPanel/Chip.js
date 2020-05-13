@@ -20,6 +20,7 @@ const Chip = ({ chips, type, transactionId, patchTransaction }) => {
               <div>{chipValue(key)}</div>
               <div>
                 <button
+                  className="btn-small-responsive"
                   onClick={() =>
                     patchTransaction(
                       transactionId,
@@ -27,11 +28,11 @@ const Chip = ({ chips, type, transactionId, patchTransaction }) => {
                       match.params.tableId
                     )
                   }
-                  className="btn-secondary"
                 >
                   -2{' '}
                 </button>
                 <button
+                  className="btn-small-responsive"
                   onClick={() =>
                     patchTransaction(
                       transactionId,
@@ -39,7 +40,7 @@ const Chip = ({ chips, type, transactionId, patchTransaction }) => {
                       match.params.tableId
                     )
                   }
-                  className="btn-secondary"
+                  className="btn-small-responsive"
                 >
                   -{' '}
                 </button>
@@ -52,7 +53,7 @@ const Chip = ({ chips, type, transactionId, patchTransaction }) => {
                       match.params.tableId
                     )
                   }
-                  className="btn-secondary"
+                  className="btn-small-responsive"
                 >
                   +{' '}
                 </button>
@@ -64,7 +65,7 @@ const Chip = ({ chips, type, transactionId, patchTransaction }) => {
                       match.params.tableId
                     )
                   }
-                  className="btn-secondary"
+                  className="btn-small-responsive"
                 >
                   +2{' '}
                 </button>

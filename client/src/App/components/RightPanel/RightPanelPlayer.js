@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import patchTable from '../../../actions/patchTable';
 import { Link } from 'react-router-dom';
 import './RightPanelPlayer.css';
+import Footer from './RightPlayerFooter';
 
 import Chip from './Chip';
 
@@ -74,15 +75,20 @@ const RightPanelPlayer = ({ match, table, patchTable }) => {
                     match.params.tableId
                   )
                 }
-                className="btn-secondary green"
+                className="btn-primary warning"
               >
-                Check Out
+                <span> Check/Out</span>
               </button>
             </Link>
+            <button style={{ marginLeft: '3px' }} className="btn-primary details">
+              <span>Details</span>
+            </button>
           </div>
         </div>
       </div>
-      <div className="footer"></div>
+      <div className="footer">
+        <Footer />
+      </div>
     </div>
   );
 };

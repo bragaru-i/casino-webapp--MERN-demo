@@ -2,19 +2,18 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
+  height: 99%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .right-container {
   display: flex;
   flex-direction: column;
   width: 80%;
+  margin: 2px;
   height: 100%;
 }
 
-.active {
-  color: orange;
-  font-weight: 400;
-}
 a {
   text-decoration: none;
   color: inherit;
@@ -41,7 +40,8 @@ a {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  padding-left: 5px;
+  display: flex;
+  max-height: 100%;
 }
 
 /* topPanel */
@@ -66,11 +66,6 @@ a {
   height: 80%;
   display: flex;
   flex-direction: row;
-}
-
-.footer {
-  width: 100%;
-  height: 20%;
 }
 
 img {
@@ -133,4 +128,23 @@ img {
 .green {
   background-color: #13ce66;
   color: white;
+}
+
+.details {
+  background-color: whitesmoke;
+  color: gray;
+  border: 1px gray solid;
+}
+.btn-small-responsive {
+  background-color: #a2a77f;
+  width: 2rem;
+  height: 100%;
+  border: none;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  font-size: 0.9rem;
+  margin: 2px 2px;
+  cursor: pointer;
+  padding: 5px;
 }
