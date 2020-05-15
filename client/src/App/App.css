@@ -24,9 +24,9 @@ a {
   display: flex;
   flex-direction: column;
   background-color: #28293b;
-
   height: 100%;
   width: 20%;
+  position: relative;
 }
 
 .left-list-container {
@@ -37,11 +37,15 @@ a {
 }
 
 .list-container {
+  /* max-height: 100%; */
+  position: relative;
+  max-height: 100%;
+  overflow-y: auto;
   width: 100%;
   height: 100%;
   flex-direction: column;
   display: flex;
-  max-height: 100%;
+  /* overflow-y: visible; */
 }
 
 /* topPanel */

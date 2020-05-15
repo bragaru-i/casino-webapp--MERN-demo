@@ -1,0 +1,85 @@
+.player-statistics {
+  -webkit-box-shadow: -24px 0px 16px -3px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: -24px 0px 16px -3px rgba(0, 0, 0, 0.39);
+  box-shadow: -24px 0px 16px -3px rgba(0, 0, 0, 0.39);
+
+  border-bottom-right-radius: 20px;
+  width: 39%;
+  height: 99%;
+  background-color: #f5f5f5;
+}
+
+.player-quickdrop {
+  border-bottom: 2px black thick;
+  width: 60%;
+  height: 99%;
+  background-color: #f5e9e9;
+  margin-right: 1rem;
+  -webkit-box-shadow: 17px 0px 16px -3px rgba(0, 0, 0, 0.39);
+  -moz-box-shadow: 17px 0px 16px -3px rgba(0, 0, 0, 0.39);
+  box-shadow: 17px 0px 16px -3px rgba(0, 0, 0, 0.39);
+}
+.qdrop-name {
+  display: flex;
+  width: 100%;
+  color: white;
+  height: 1.2rem;
+  padding-left: 5px;
+  background-color: #5f6062;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 1rem;
+}
+
+.qdrop-digits-container {
+  display: flex;
+  width: 100%;
+  align-self: center;
+  background-color: #f5f5f5;
+  height: calc(100% - 1.2rem);
+  flex-direction: row;
+  justify-content: space-around;
+}
+.qdrop-digits {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+.qdrop-row {
+  display: flex;
+  width: 100%;
+  height: 32%;
+  padding: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.qdrop-row div {
+  background-color: #f2f1f0;
+  width: 96%;
+  margin-left: 10px;
+  border-radius: 5px;
+  border: 1px grey dashed;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+}
+
+.qdrop-display {
+  height: 95%;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+input[type='number'] {
+  width: 90%;
+  padding: 6px;
+  margin-top: 0px;
+
+  border-radius: 5px;
+  border: 1px solid #cbcbcb;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
+  font-size: 0.9rem;
+}

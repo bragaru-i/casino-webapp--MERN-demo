@@ -13,7 +13,7 @@ const LeftPanelTables = ({ tables, getAllTables }) => {
     getAllTables();
   }, []);
   let tablesArr = tables.data;
-
+  console.log(tablesArr);
   return (
     <Fragment>
       <MenuBurger link="tables" />
@@ -23,7 +23,7 @@ const LeftPanelTables = ({ tables, getAllTables }) => {
             tablesArr.map((table) => (
               <li key={table.id} className="list-table-item">
                 <Icon
-                  name={table.name[0] == 'A' ? 'roulette' : 'cards'}
+                  name={table.name[0] === 'A' ? 'roulette' : 'cards'}
                   fill="#788799"
                   width="45px"
                   style={{

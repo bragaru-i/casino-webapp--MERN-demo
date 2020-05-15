@@ -87,7 +87,7 @@ const RightPanelPlayer = ({ match, table, patchTable }) => {
         </div>
       </div>
       <div className="footer">
-        <Footer />
+        <Footer transaction={transaction} />
       </div>
     </div>
   );

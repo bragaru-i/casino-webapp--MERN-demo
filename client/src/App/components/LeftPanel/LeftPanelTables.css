@@ -1,9 +1,4 @@
 /*  defining tables list */
-/* .list-container li .active {
-  background-color: white;
-  width: 100%;
-  height: 2rem;
-} */
 
 .list-table-item {
   width: 100%;
@@ -24,6 +19,10 @@
   font-weight: 400;
   color: orangered;
 }
+.list-table-item > a {
+  height: 100;
+  width: 100%;
+}
 
 /* defining players lis */
 
@@ -31,6 +30,7 @@
   width: 100%;
   height: 4rem;
   display: flex;
+  min-height: 4rem;
 }
 
 .list-player-item > a {

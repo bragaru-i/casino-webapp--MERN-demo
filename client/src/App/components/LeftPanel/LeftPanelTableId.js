@@ -12,7 +12,7 @@ const LeftPanelTableId = ({ table, loadTable }) => {
 
   useEffect(() => {
     loadTable(tableId);
-  }, []);
+  }, [tableId]);
 
   let data = table.data.table || [];
 
@@ -30,9 +30,10 @@ const LeftPanelTableId = ({ table, loadTable }) => {
                 style={{
                   background: 'transparent',
                   paddingLeft: '1rem',
+                  // paddingRight: '5px',
                 }}
-              />
-              Add a player
+              ></Icon>
+              <span style={{ paddingLeft: '5px' }}> Add a player</span>
             </Link>
           </li>
           {table.loading === 'loaded' &&
