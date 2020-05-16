@@ -34,7 +34,12 @@ const RightPanel = () => {
           <li> Transactions (chip in/out/drop) and exchange in same window</li>
           <li> Players check OUT</li>
         </ul>
-        <div></div>
+        <h5
+          style={{ marginTop: '10px', marginBottom: '3px', width: '20em' }}
+          className="warning"
+        >
+          NOT FULLY RESPONSIVE, STILL TESTING
+        </h5>
       </div>
     </div>
   );
