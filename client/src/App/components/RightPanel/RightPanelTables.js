@@ -1,4 +1,5 @@
 import React from 'react';
+import addRandomPlayer from '../../../utils/faker-data/randomPlayerToDb';
 
 const RightPanelTables = () => {
   return (
