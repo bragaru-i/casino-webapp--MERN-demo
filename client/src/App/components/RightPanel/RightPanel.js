@@ -40,6 +40,7 @@ const RightPanel = () => {
         >
           NOT FULLY RESPONSIVE, STILL TESTING
         </h5>
+        https://github.com/fargusmd/casino-api
       </div>
     </div>
   );
