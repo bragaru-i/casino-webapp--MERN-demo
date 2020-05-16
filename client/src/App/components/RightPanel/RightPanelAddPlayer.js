@@ -1,10 +1,9 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import searchPlayer from '../../../actions/searchPlayerAction';
 import patchTable from '../../../actions/patchTable';
 import './RightPanelAddPlayer.css';
-import { Link } from 'react-router-dom';
 
 const RightPanelAddPlayer = ({ results, searchPlayer, match, patchTable }) => {
   const [formData, setformData] = useState({
@@ -79,7 +78,11 @@ const RightPanelAddPlayer = ({ results, searchPlayer, match, patchTable }) => {
                   </span>
                   <span>{player.cId}</span>
                   <span>
-                    <img src={player.avatar} style={{ paddingTop: '5px' }}></img>
+                    <img
+                      src={player.avatar}
+                      style={{ paddingTop: '5px' }}
+                      alt="Avatar"
+                    ></img>
                   </span>
                   <span>{player.country}</span>
                   <span>{player.visits[player.visits.length - 1].slice(0, 10)}</span>

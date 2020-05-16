@@ -17,7 +17,7 @@ const TopPanelTableId = ({ table }) => {
         <div className="float-container">
           {floatKeys.length > 0 &&
             floatKeys
-              .filter((item) => item != '_id')
+              .filter((item) => item !== '_id')
               .map((chip) => (
                 <div key={chip} className="float-chip-container">
                   <div> {chipValue(chip)}</div>

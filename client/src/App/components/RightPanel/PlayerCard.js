@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import moment from 'moment';
 
 import './PlayerCard.css';
@@ -11,8 +10,6 @@ const PlayerCard = ({ player, patchTable, playerId, tableId }) => {
   // let age = birthday ? new Date().getFullYear() - new Date(birthday).getFullYear() : 0;
   let age = birthday ? moment().diff(birthday, 'years') : 0;
 
-  if (visits && visits.length > 0) console.log(visits[0]);
-
   return (
     <div className="player-details-container">
       <div className="avatar-container">
@@ -22,7 +19,12 @@ const PlayerCard = ({ player, patchTable, playerId, tableId }) => {
           <span style={{ fontSize: '0.75rem' }}> Get Details </span>
         </button>
         <button className="btn-primary warning">
-          <span style={{ fontSize: '0.75rem' }}>Check out</span>
+          <span
+            style={{ fontSize: '0.75rem' }}
+            onClick={() => patchTable({ inactive: { player: playerId } }, tableId)}
+          >
+            Check out
+          </span>
         </button>
         <span style={{ fontWeight: '400' }} className="name">
           {firstName} {lastName}

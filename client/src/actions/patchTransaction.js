@@ -4,10 +4,10 @@ import loadTable from './getTableByIdAction';
 
 const patchTransactions = (id, obj, tableId) => (dispatch) => {
   const body = { ...obj };
-  console.log(body);
+  // console.log(body);
+  // console.log(obj);
+  // console.log(url);
   const url = `/api/v1/transactions/${id}`;
-  console.log(obj);
-  console.log(url);
 
   axios
     .patch(url, body)

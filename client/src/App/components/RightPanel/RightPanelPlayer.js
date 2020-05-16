@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import patchTable from '../../../actions/patchTable';
-import { Link } from 'react-router-dom';
 import './RightPanelPlayer.css';
 import Footer from './RightPlayerFooter';
 

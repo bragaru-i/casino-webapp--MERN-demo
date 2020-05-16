@@ -7,7 +7,7 @@ const addRandomToDB = () => {
   console.log(newPlayer);
   axios
     .post('/api/v1/players', newPlayer)
-    .then((res) => console.log('Status response:', res.status))
+    .then((res) => alert('ADDED'))
     .catch((err) => console.log(err));
 };
 module.exports = addRandomToDB;
