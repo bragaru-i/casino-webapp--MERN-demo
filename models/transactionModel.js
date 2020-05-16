@@ -44,9 +44,8 @@ const transactionSchema = new mongoose.Schema(
 
     cash: {
       amount: { type: Number, default: 0 },
-      date: { type: Date, required: true, default: dtfUS.format(Date.now()) },
 
-      log: Array,
+      log: [{ amount: Number, date: Date }],
     },
     result: {
       type: Number,

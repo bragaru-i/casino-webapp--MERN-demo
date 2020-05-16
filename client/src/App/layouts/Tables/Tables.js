@@ -3,7 +3,8 @@ import React, { Fragment } from 'react';
 // import for TABLES => displaying only table
 import LeftPanelTables from '../../components/LeftPanel/LeftPanelTables';
 import RightPanelTables from '../../components/RightPanel/RightPanelTables';
-import TopPanelTables from '../../components/TopPanel/TopPanelTables';
+
+import TopPanelTableId from './../../components/TopPanel/TopPanelTableId';
 
 const Tables = ({ match }) => {
   return (
@@ -12,7 +13,8 @@ const Tables = ({ match }) => {
         <LeftPanelTables />
       </div>
       <div className="right-container">
-        <TopPanelTables />
+        {/* <TopPanelTables /> */}
+        <TopPanelTableId />
         <RightPanelTables />
       </div>
     </Fragment>

@@ -5,12 +5,15 @@ import './TopPanelTableId.css';
 import moment from 'moment';
 
 const TopPanelTableId = ({ table }) => {
+  console.log(table);
   const float = table.loading === 'loaded' && table.data.table.float;
   let floatKeys = Object.keys(float);
   return (
     <div className="top-panel-container">
       <div className="top-panel-float-container">
-        <div className="top-panel-tabname">Float for</div>
+        <div className="top-panel-tabname">
+          Float for {table.loading === 'loaded' ? table.data.table.name : null}
+        </div>
         <div className="float-container">
           {floatKeys.length > 0 &&
             floatKeys

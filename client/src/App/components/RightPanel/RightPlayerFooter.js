@@ -1,9 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
 
+import patchTransaction from '../../../actions/patchTransaction';
 import './RightPanelFooter.css';
+import countFloat from '../../../utils/countFloat';
+import moment from 'moment';
 
-const RightPlayerFooter = ({ transaction }) => {
-  console.log(transaction);
+const RightPlayerFooter = ({ transaction, patchTransaction }) => {
+  let tableId = useRouteMatch().params.tableId;
   const [result, setResult] = useState('');
   const [entered, setEntered] = useState('');
   const [currency, setCurrency] = useState('USD');
@@ -26,10 +31,33 @@ const RightPlayerFooter = ({ transaction }) => {
         <div className="qdrop-name">
           <span>Quick CashDrop</span>
           <span style={{ cursor: 'pointer' }}>
-            <span onClick={() => setCurrency('USD')}>usd</span>/
-            <span onClick={() => setCurrency('EUR')}>eur</span> /
-            <span onClick={() => setCurrency('TL')}> tl</span>/
-            <span onClick={() => setCurrency('GEL')}>gel</span>
+            <span
+              className={currency === 'USD' ? 'active' : ''}
+              onClick={() => setCurrency('USD')}
+            >
+              usd
+            </span>
+            <span
+              className={currency === 'EUR' ? 'active' : ''}
+              onClick={() => setCurrency('EUR')}
+            >
+              {' '}
+              eur
+            </span>
+            <span
+              className={currency === 'TL' ? 'active' : ''}
+              onClick={() => setCurrency('TL')}
+            >
+              {' '}
+              tl
+            </span>
+            <span
+              className={currency === 'GEL' ? 'active' : ''}
+              onClick={() => setCurrency('GEL')}
+            >
+              {' '}
+              gel
+            </span>
           </span>
         </div>
         <div className="qdrop-digits-container">
@@ -39,21 +67,35 @@ const RightPlayerFooter = ({ transaction }) => {
               <div onClick={() => setEntered(entered + '2')}>2</div>
               <div onClick={() => setEntered(entered + '3')}>3</div>
               <div onClick={() => setEntered(entered + '4')}>4</div>
-              <div onClick={() => setEntered(entered.slice(0, -1))}>C</div>
+              <div
+                className="qdrop-btns"
+                onClick={() => setEntered(entered.slice(0, -1))}
+              >
+                C
+              </div>
             </div>
-            <div className="qdrop-row">
+            <div className="qdrop-row drop">
               <div onClick={() => setEntered(entered + '5')}>5</div>
               <div onClick={() => setEntered(entered + '6')}>6</div>
               <div onClick={() => setEntered(entered + '7')}>7</div>
               <div onClick={() => setEntered(entered + '8')}>8</div>
-              <div onClick={() => setEntered('')}>DELETE</div>
+              <div className="qdrop-btns " onClick={() => setEntered('')}>
+                DELETE
+              </div>
             </div>
-            <div className="qdrop-row">
+            <div className="qdrop-row ">
               <div onClick={() => setEntered(entered + '9')}>9</div>
               <div onClick={() => setEntered(entered + '0')}>0</div>
               <div onClick={() => setEntered(entered + '00')}>00</div>
               <div onClick={() => setEntered(entered + '000')}>000</div>
-              <div onClick={() => setEntered(entered + '4')}>DROP</div>
+              <div
+                className="qdrop-btns"
+                onClick={() =>
+                  patchTransaction(transaction.id, { cash: { amount: result } }, tableId)
+                }
+              >
+                DROP
+              </div>
             </div>
           </div>
 
@@ -76,11 +118,38 @@ const RightPlayerFooter = ({ transaction }) => {
       </div>
       <div className="player-statistics">
         <div className="qdrop-name">
-          <span>Results</span>
+          <span> Results on current table </span>
+        </div>
+        <div className="player-stats-container">
+          <div>
+            <span>Chip In: {transaction.chipIn && countFloat(transaction.chipIn)}</span>
+            <br />
+            <span>
+              Chip Out: {transaction.chipOut && countFloat(transaction.chipOut)}{' '}
+            </span>
+            <br />
+            <span>Total DROP : {transaction.cash ? transaction.cash.amount : 0} </span>
+            <br />
+            <span>Result: {transaction.result || 0}</span>
+            <br></br>
+          </div>
+          <div className="player-cash-logs">
+            <span style={{ height: '1rem', fontSize: '0.8rem' }}>CASH LOGS:</span>
+            <ul>
+              {transaction.cash
+                ? transaction.cash.log.map((item) => (
+                    <li key={item._id}>
+                      <span>[{moment(item.date).format('h:mm')}]</span>
+                      <span> : amount ${item.amount}</span>
+                    </li>
+                  ))
+                : null}
+            </ul>
+          </div>
         </div>
       </div>
     </Fragment>
   );
 };
 
-export default RightPlayerFooter;
+export default connect(null, { patchTransaction })(RightPlayerFooter);

@@ -8,7 +8,6 @@ import patchTransaction from '../../../actions/patchTransaction';
 import { useRouteMatch } from 'react-router-dom';
 const Chip = ({ chips, type, transactionId, patchTransaction }) => {
   const chipKeys = (chips && Object.keys(chips)) || [];
-  console.log(transactionId);
   const match = useRouteMatch();
   return (
     <div className="chip-container">

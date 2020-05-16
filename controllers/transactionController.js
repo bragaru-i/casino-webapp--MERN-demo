@@ -71,9 +71,10 @@ exports.updateTransaction = catchAsync(async (req, res, next) => {
       case 'cash': {
         transaction.cash.log = transaction.cash.log || [];
         transaction.cash.amount += req.body[key].amount * 1;
-        transaction.cash.log.push(
-          `Amount: ${req.body[key].amount} at ${transaction.cash.date}`
-        );
+        transaction.cash.log = [
+          { ...req.body[key], date: Date.now() },
+          ...transaction.cash.log,
+        ];
         break;
       }
       default:

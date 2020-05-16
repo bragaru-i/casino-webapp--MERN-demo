@@ -4,7 +4,7 @@ import loadTable from './getTableByIdAction';
 
 const patchTransactions = (id, obj, tableId) => (dispatch) => {
   const body = { ...obj };
-
+  console.log(body);
   const url = `/api/v1/transactions/${id}`;
   console.log(obj);
   console.log(url);

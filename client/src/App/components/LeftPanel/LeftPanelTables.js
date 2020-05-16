@@ -13,7 +13,6 @@ const LeftPanelTables = ({ tables, getAllTables }) => {
     getAllTables();
   }, []);
   let tablesArr = tables.data;
-  console.log(tablesArr);
   return (
     <Fragment>
       <MenuBurger link="tables" />

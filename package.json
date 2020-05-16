@@ -8,7 +8,7 @@
     "start": "node server.js",
     "dev-localdb": "nodemon server-local.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run dev-localdb\" \"npm run client\"",
+    "dev": "concurrently \"npm start\" \"npm run client\"",
     "prod": "NODE_ENV=production nodemon server.js"
   },
   "keywords": [
