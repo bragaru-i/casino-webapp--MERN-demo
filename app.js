@@ -1,7 +1,9 @@
 const express = require('express');
 const morgan = require('morgan');
+
 const cors = require('cors');
 
+const path = require('path');
 const app = express();
 
 // Allowing everyone to use API
@@ -38,6 +40,13 @@ app.use('/api/v1/transactions', transactionRouter);
 app.all('/api/v1/*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
 });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
 app.use(globalErrorHandler);
 
 module.exports = app;
