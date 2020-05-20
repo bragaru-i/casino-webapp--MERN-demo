@@ -1,3 +1,7 @@
-#Api for casino-float
+# a casino SPA float counter.
+testing in progress.
 
-Demo version, only some features enabled
+deployed here:
+casino-float.herokuapp.com/
+
+#MERN stack
